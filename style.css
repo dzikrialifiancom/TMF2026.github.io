@@ -23,6 +23,11 @@ body {
     overflow-x: hidden;
 }
 
+body.noscroll {
+    overflow: hidden !important;
+    height: 100vh;
+}
+
 h1,
 h2,
 h3,

@@ -254,3 +254,25 @@ if (performerModal) {
         });
     });
 }
+
+// Site Lock Logic (Every Visit)
+document.addEventListener('DOMContentLoaded', () => {
+    const exploreBtn = document.getElementById('explore-btn');
+
+    // Always lock on load
+    document.body.classList.add('noscroll');
+    if (exploreBtn) {
+        exploreBtn.classList.remove('d-none');
+
+        exploreBtn.addEventListener('click', () => {
+            document.body.classList.remove('noscroll');
+            exploreBtn.classList.add('d-none'); // Hide button after unlocking
+
+            // Scroll to About section
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+});
